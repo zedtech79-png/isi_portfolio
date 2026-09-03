@@ -1,0 +1,115 @@
+/*layout.css */
+
+/* ==========================================================================
+   Layout scaffolding
+   ========================================================================== */
+
+/* Transparent header, overlaid on the hero image. Since the site is
+   currently a single hero-led page, it sits absolutely at the top of the
+   document rather than fixed — revisit with a scroll-solid state once
+   more sections are built and the page is tall enough to need it. */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  background: transparent;
+}
+
+.site-header__bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  height: var(--header-h);
+}
+
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ink-900);
+  background-image: url("../assets/images/herobg3.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--text-on-dark-muted);
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(var(--footer-tint-rgb), var(--footer-tint));
+  z-index: 1;
+}
+
+.site-footer__bar,
+.footer__bottom {
+  position: relative;
+  z-index: 2;
+}
+
+.site-footer__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-block: 2.5rem;
+  border-bottom: 1px solid var(--border-on-dark);
+}
+
+.footer__links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: var(--step--1);
+}
+
+.footer__links a:hover {
+  color: var(--paper-000);
+}
+
+.footer__contact {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: var(--step--1);
+}
+
+.footer__contact a:hover {
+  color: var(--accent-blue-bright);
+}
+
+.footer__bottom {
+  padding-block: 1.25rem;
+  font-size: 0.75rem;
+  color: var(--text-on-dark-muted);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .site-footer__bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+main {
+  display: block;
+}
+
+section {
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+.services {
+  padding-top: 3rem;
+}
+
+.work {
+  padding-top: 3rem;
+}
+
+.footer__bottom p {
+  max-width: none;
+}

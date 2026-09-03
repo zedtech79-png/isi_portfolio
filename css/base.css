@@ -1,0 +1,190 @@
+/*base.css */
+
+/* ==========================================================================
+   Integritech Solutions Inc. — Base styles, design tokens, typography
+   ========================================================================== */
+
+:root {
+  /* Color */
+  --ink-900: #0b1526;
+  --ink-800: #14263f;
+  --ink-700: #1c3352;
+  --paper-100: #f1f2f4;
+  --paper-000: #ffffff;
+  --text-body: #2b3542;
+  --text-muted: #5c6773;
+  --text-on-dark: #ffffff;
+  --text-on-dark-muted: #c3ccd6;
+  /* Brand palette — sampled from the company logo */
+  --accent-blue: #2c7bc0;
+  --accent-blue-dark: #1d5c93;
+  --accent-blue-bright: #5fa8e0;
+  --accent-green: #4caf50;
+  --accent-green-dark: #3b8f45;
+  --accent-green-bright: #7fcb5b;
+  --border-on-dark: rgba(233, 236, 241, 0.14);
+  --border-on-light: rgba(11, 21, 38, 0.12);
+
+  /* Hero background tint — adjust --hero-tint (0–1) to taste */
+  --hero-tint-rgb: 11, 21, 26;
+  --hero-tint: 0.72;
+
+  /* Services background tint — same idea, but light (paper-colored)
+     since Services sits on a light background. Raise --services-tint
+     toward 1 if your background image is busy and text gets hard to
+     read; lower it toward 0 to let more of the image show. */
+  --services-tint-rgb: 241, 242, 244;
+  --services-tint: 0.8;
+
+  /* Work background tint — same idea as hero, dark since work sits on
+     a dark background image. Adjust --work-tint (0–1) to taste. */
+  --work-tint-rgb: 11, 21, 26;
+  --work-tint: 0.72;
+
+  /* Footer background tint — same mechanism as hero/work. */
+  --footer-tint-rgb: 11, 21, 26;
+  --footer-tint: 0.75;
+
+  /* Header height, referenced by the hero offset and mobile dropdown */
+  --header-h: 88px;
+
+  /* Type */
+  --font-display: "Space Grotesk", "Roboto", -apple-system, sans-serif;
+  --font-body: "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Roboto Mono", "SFMono-Regular", Menlo, monospace;
+
+  /* Scale (major third-ish, tuned by eye) */
+  --step--1: 0.875rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.625rem;
+  --step-3: 2.25rem;
+  --step-4: 3.25rem;
+  --step-5: 4.25rem;
+
+  /* Layout */
+  --content-max: 1350px;
+
+  /* Side margins for the whole site — one value, applies to left AND
+     right equally on every .container. Raise the min/max to push
+     content in from the edges; lower them to widen it. Current:
+     1.25rem on tiny screens, scaling up to 3rem on wide screens. */
+  --gutter: clamp(1rem, 3vw, 2rem);
+  --radius-sm: 3px;
+
+  /* Max width of the hero visual column — raise this to make the
+     hero image bigger, lower it to shrink it. It competes with the
+     copy column for space inside --content-max, so pushing it very
+     high will start squeezing the headline. */
+  --hero-visual-col: 700px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--text-body);
+  background: var(--paper-000);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+  color: inherit;
+}
+
+p {
+  margin: 0;
+  max-width: 100ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background: var(--accent-blue);
+  border: none;
+  color: inherit;
+  padding: 0;
+  appearance: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Visible keyboard focus, always */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-blue-bright);
+  outline-offset: 3px;
+}
+
+.container {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.bg-navy {
+  background: var(--ink-900);
+  color: var(--text-on-dark);
+}
+
+@media (max-width: 860px) {
+  :root {
+    --header-h: 72px;
+  }
+}
