@@ -718,9 +718,18 @@
    Tiles keep DOM order b -> f as the JS re-renders them, so nth-of-type
    maps each button to its cell without needing per-item inline styles. */
 .work__grid {
+  --work-flag-col: 1fr;
+  --work-tile-col: 1fr;
+  --work-flag-row: minmax(160px, auto);
+  --work-tile-row: minmax(160px, auto);
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, minmax(140px, auto));
+  grid-template-columns: var(--work-flag-col) var(--work-flag-col) var(
+      --work-tile-col
+    );
+  grid-template-rows: var(--work-flag-row) var(--work-flag-row) var(
+      --work-tile-row
+    );
   grid-template-areas:
     "flag flag tile-b"
     "flag flag tile-c"
