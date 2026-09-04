@@ -1124,7 +1124,7 @@
 }
 
 .about__intro {
-  max-width: 1200px;
+  max-width: 1000px;
   margin-inline: auto;
   margin-bottom: 2rem;
   text-align: center;
@@ -1191,7 +1191,7 @@
   display: block;
   width: 100%;
 
-  margin: 0 0 0px;
+  margin: 0 0 30px;
 
   text-align: center !important;
   max-width: none;
@@ -1199,49 +1199,36 @@
 
 .about__slogan {
   width: 100%;
-  margin: 10px 0 0;
+  margin: 34px auto 0;
 
   text-align: center !important;
 
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.5;
-  max-width: none;
+  max-width: 1000px;
 }
+
+/* =========================
+   ABOUT — COMPANY CARDS
+   ========================= */
 
 .about__logos {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 22px;
-  padding: 20px 20px;
-}
-
-.about__logo-link {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
   width: 100%;
-  height: 100%;
-  min-height: 125px;
-
-  padding: 22px 26px;
-
-  color: inherit;
-  text-decoration: none;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about__logo-card {
-  flex: 1 1 0;
-  min-width: 300px;
-  max-width: 390px;
-  min-height: 125px;
+  min-width: 0;
+  min-height: 170px;
 
   background: rgba(255, 255, 255, 0.96);
-  border-radius: 6px;
+  border-radius: 8px;
+  overflow: hidden;
 
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 
@@ -1251,27 +1238,104 @@
 }
 
 .about__logo-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-.about__logo-img {
-  width: 58px;
-  height: 58px;
-  object-fit: contain;
-  flex-shrink: 0;
+/* Make the ENTIRE card clickable */
+
+.about__logo-link {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  width: 100%;
+  min-height: 170px;
+  height: 100%;
+
+  padding: 28px;
+
+  color: inherit;
+  text-decoration: none;
 }
+
+/* Keep all logos in a consistent area */
+
+.about__logo-img {
+  width: 72px;
+  height: 72px;
+
+  flex: 0 0 72px;
+
+  object-fit: contain;
+}
+
+/* Text takes the remaining space */
+
+.about__logo-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+}
+
+/* Company name */
 
 .about__logo-name {
   display: block;
-  font-size: var(--step--1);
-  font-weight: 600;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+
   color: var(--ink-900);
 }
 
+/* Company description */
+
 .about__logo-tag {
   display: block;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-top: 0.15rem;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: var(--ink-600);
+}
+
+@media (max-width: 900px) {
+  .about__logos {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+  }
+
+  .about__logo-card,
+  .about__logo-link {
+    min-height: 145px;
+  }
+}
+
+@media (max-width: 520px) {
+  .about__logo-link {
+    padding: 22px;
+    gap: 16px;
+  }
+
+  .about__logo-img {
+    width: 60px;
+    height: 60px;
+    flex-basis: 60px;
+  }
+
+  .about__logo-name {
+    font-size: 0.98rem;
+  }
+
+  .about__logo-tag {
+    font-size: 0.82rem;
+  }
 }
