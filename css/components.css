@@ -754,9 +754,9 @@
   grid-area: flag;
   display: flex;
   flex-direction: column;
-  background: var(--ink-800);
+  background: var(--transparent-blue);
   border: 1px solid var(--border-on-dark);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm1);
   overflow: hidden;
   animation: hero-rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -813,7 +813,7 @@
 }
 
 .work__flagship-desc {
-  color: var(--text-on-dark-muted);
+  color: var(--paper-100);
   font-size: var(--step--1);
 }
 
@@ -868,9 +868,9 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: var(--ink-800);
+  background: var(--transparent-blue);
   border: 1px solid var(--border-on-dark);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm1);
   transition: border-color 0.15s ease;
   animation: hero-rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -1124,7 +1124,7 @@
 }
 
 .about__intro {
-  max-width: 640px;
+  max-width: 1200px;
   margin-inline: auto;
   margin-bottom: 2rem;
   text-align: center;
@@ -1156,8 +1156,11 @@
 }
 
 .about__desc {
-  margin: 0.75rem auto 0;
   color: var(--ink-900);
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem 0 auto;
+  text-align: center;
 }
 
 /* Logo row sits on a soft blurred glow panel rather than a flat card,

@@ -24,6 +24,7 @@
   --accent-green-bright: #7fcb5b;
   --border-on-dark: rgba(233, 236, 241, 0.14);
   --border-on-light: rgba(11, 21, 38, 0.12);
+  --transparent-blue: #0c2b4e82;
 
   /* Hero background tint — adjust --hero-tint (0–1) to taste */
   --hero-tint-rgb: 11, 21, 26;
@@ -71,6 +72,7 @@
      1.25rem on tiny screens, scaling up to 3rem on wide screens. */
   --gutter: clamp(1rem, 3vw, 2rem);
   --radius-sm: 3px;
+  --radius-sm1: 16px;
 
   /* Max width of the hero visual column — raise this to make the
      hero image bigger, lower it to shrink it. It competes with the
