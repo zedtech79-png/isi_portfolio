@@ -136,7 +136,7 @@
   padding-bottom: clamp(2.5rem, 6vw, 2rem);
   position: relative;
   overflow: hidden;
-  background-image: url("../assets/images/herobg2.jpg");
+  background-image: url("../assets/images/footerbg.jpg");
   background-size: cover;
   background-position: center;
 }
