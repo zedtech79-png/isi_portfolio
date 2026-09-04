@@ -91,7 +91,8 @@
 }
 
 .btn--primary {
-  background: var(--ink-900);
+  background: transparent;
+  border: 1px solid var(--accent-blue);
   color: var(--paper-000);
 }
 
