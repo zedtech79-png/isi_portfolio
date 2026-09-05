@@ -429,7 +429,15 @@
             </p>
           </div>
 
-          <div class="work__grid" id="workGrid" aria-live="polite"></div>
+          <div class="work__timeline">
+            <div class="work__timeline-track" aria-hidden="true"></div>
+            <div
+              class="work__timeline-progress"
+              id="workTimelineProgress"
+              aria-hidden="true"
+            ></div>
+            <div class="work__rows" id="workGrid" aria-live="polite"></div>
+          </div>
         </div>
       </section>
 
@@ -627,6 +635,19 @@
               Send message
             </button>
           </form>
+        </div>
+      </div>
+      <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+        <div class="image-lightbox__backdrop" data-close></div>
+        <button
+          class="image-lightbox__close"
+          data-close
+          aria-label="Close image preview"
+        >
+          &times;
+        </button>
+        <div class="image-lightbox__content" role="dialog" aria-modal="true">
+          <img id="imageLightboxImg" src="" alt="" />
         </div>
       </div>
     </main>
